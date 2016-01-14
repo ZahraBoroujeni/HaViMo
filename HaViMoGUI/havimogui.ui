@@ -1,0 +1,1891 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>HaViMoGUIClass</class>
+ <widget class="QWidget" name="HaViMoGUIClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>817</width>
+    <height>743</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>HaViMoGUI</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0">
+     <property name="spacing">
+      <number>6</number>
+     </property>
+     <property name="sizeConstraint">
+      <enum>QLayout::SetDefaultConstraint</enum>
+     </property>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_6">
+           <property name="spacing">
+            <number>2</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Connection Type:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="comboBox_conntype">
+             <property name="editable">
+              <bool>false</bool>
+             </property>
+             <property name="currentIndex">
+              <number>0</number>
+             </property>
+             <item>
+              <property name="text">
+               <string>USB2Dynamixel</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>ROBOBUILDER RBC</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>CM5</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>CM510</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Direct Serial Connection</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_7">
+           <property name="spacing">
+            <number>3</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>Connection Port:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PortComboBox" name="comboBox_port">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_connect">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Connect</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="default">
+            <bool>false</bool>
+           </property>
+           <property name="flat">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_checkcamera">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Check Camera</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_original">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="title">
+          <string>Original Image</string>
+         </property>
+         <layout class="QFormLayout" name="formLayout">
+          <property name="fieldGrowthPolicy">
+           <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+          </property>
+          <item row="0" column="0">
+           <widget class="QPushButton" name="pushButton_sample">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Sample Image</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QPushButton" name="pushButton_stream">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Stream</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <spacer name="verticalSpacer_8">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="2" column="0" colspan="2">
+           <widget class="CamImageView" name="originalImage">
+            <property name="minimumSize">
+             <size>
+              <width>160</width>
+              <height>120</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_lutoverlap">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="title">
+          <string>LUT Overlap</string>
+         </property>
+         <layout class="QFormLayout" name="formLayout_2">
+          <property name="fieldGrowthPolicy">
+           <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+          </property>
+          <item row="0" column="0" colspan="2">
+           <widget class="QWidget" name="widget" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>50</width>
+              <height>21</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <spacer name="verticalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="overlayImage">
+            <property name="minimumSize">
+             <size>
+              <width>160</width>
+              <height>120</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_5">
+         <property name="title">
+          <string>Image Processing Results</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_8">
+          <item row="2" column="0" colspan="2">
+           <widget class="QLabel" name="resultImage">
+            <property name="minimumSize">
+             <size>
+              <width>160</width>
+              <height>120</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QPushButton" name="buttonRegion">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Region</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QPushButton" name="buttonGriding">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Gridding</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <spacer name="verticalSpacer_9">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="2">
+           <widget class="QPushButton" name="buttonGVG">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>GVG</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_5">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QTabWidget" name="tabWidget">
+       <property name="currentIndex">
+        <number>1</number>
+       </property>
+       <widget class="QWidget" name="tab">
+        <property name="minimumSize">
+         <size>
+          <width>545</width>
+          <height>0</height>
+         </size>
+        </property>
+        <attribute name="title">
+         <string>Color Look Up Table</string>
+        </attribute>
+        <layout class="QVBoxLayout" name="verticalLayout_8">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <property name="sizeConstraint">
+            <enum>QLayout::SetDefaultConstraint</enum>
+           </property>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_2">
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_4">
+               <item>
+                <widget class="QPushButton" name="WriteLUT">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="text">
+                  <string>Flash LUT</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="readLUT">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="text">
+                  <string>Read LUT</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_5">
+               <item>
+                <widget class="QPushButton" name="pushButton_save">
+                 <property name="text">
+                  <string>Save LUT to File</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pushButton_load">
+                 <property name="text">
+                  <string>Load LUT From File</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="colorBox">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="title">
+                <string>Select Color</string>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_3">
+                <item row="3" column="0" colspan="2">
+                 <layout class="QVBoxLayout" name="verticalLayout_4">
+                  <item>
+                   <widget class="QCheckBox" name="checkBox_interpolate">
+                    <property name="text">
+                     <string>Interpolate</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_exchange">
+                    <property name="text">
+                     <string>Exchange Color With:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="colorCombo">
+                    <property name="minimumSize">
+                     <size>
+                      <width>80</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <item>
+                     <property name="text">
+                      <string>Background</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Color 1</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Color 2</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Color 3</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Color 4</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Color 5</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Color 6</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Color 7</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QPushButton" name="eraseLut">
+                  <property name="text">
+                   <string>Erase LUT</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QPushButton" name="pushButton_erase">
+                  <property name="text">
+                   <string>Erase Color</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0" colspan="2">
+                 <widget class="QGroupBox" name="groupBox">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="title">
+                   <string/>
+                  </property>
+                  <widget class="QRadioButton" name="radioButton0">
+                   <property name="enabled">
+                    <bool>true</bool>
+                   </property>
+                   <property name="geometry">
+                    <rect>
+                     <x>10</x>
+                     <y>10</y>
+                     <width>97</width>
+                     <height>17</height>
+                    </rect>
+                   </property>
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>Background</string>
+                   </property>
+                   <attribute name="buttonGroup">
+                    <string notr="true">buttonGroup</string>
+                   </attribute>
+                  </widget>
+                  <widget class="QRadioButton" name="radioButton1">
+                   <property name="geometry">
+                    <rect>
+                     <x>10</x>
+                     <y>30</y>
+                     <width>97</width>
+                     <height>17</height>
+                    </rect>
+                   </property>
+                   <property name="text">
+                    <string>Color 1</string>
+                   </property>
+                   <property name="checked">
+                    <bool>false</bool>
+                   </property>
+                   <attribute name="buttonGroup">
+                    <string notr="true">buttonGroup</string>
+                   </attribute>
+                  </widget>
+                  <widget class="QRadioButton" name="radioButton2">
+                   <property name="geometry">
+                    <rect>
+                     <x>10</x>
+                     <y>50</y>
+                     <width>97</width>
+                     <height>17</height>
+                    </rect>
+                   </property>
+                   <property name="text">
+                    <string>Color 2</string>
+                   </property>
+                   <attribute name="buttonGroup">
+                    <string notr="true">buttonGroup</string>
+                   </attribute>
+                  </widget>
+                  <widget class="QRadioButton" name="radioButton3">
+                   <property name="geometry">
+                    <rect>
+                     <x>10</x>
+                     <y>70</y>
+                     <width>97</width>
+                     <height>17</height>
+                    </rect>
+                   </property>
+                   <property name="text">
+                    <string>Color 3</string>
+                   </property>
+                   <attribute name="buttonGroup">
+                    <string notr="true">buttonGroup</string>
+                   </attribute>
+                  </widget>
+                  <widget class="QRadioButton" name="radioButton4">
+                   <property name="geometry">
+                    <rect>
+                     <x>10</x>
+                     <y>90</y>
+                     <width>97</width>
+                     <height>17</height>
+                    </rect>
+                   </property>
+                   <property name="text">
+                    <string>Color 4</string>
+                   </property>
+                   <property name="checked">
+                    <bool>false</bool>
+                   </property>
+                   <attribute name="buttonGroup">
+                    <string notr="true">buttonGroup</string>
+                   </attribute>
+                  </widget>
+                  <widget class="QRadioButton" name="radioButton5">
+                   <property name="geometry">
+                    <rect>
+                     <x>10</x>
+                     <y>110</y>
+                     <width>97</width>
+                     <height>17</height>
+                    </rect>
+                   </property>
+                   <property name="text">
+                    <string>Color 5</string>
+                   </property>
+                   <attribute name="buttonGroup">
+                    <string notr="true">buttonGroup</string>
+                   </attribute>
+                  </widget>
+                  <widget class="QRadioButton" name="radioButton6">
+                   <property name="geometry">
+                    <rect>
+                     <x>10</x>
+                     <y>130</y>
+                     <width>97</width>
+                     <height>17</height>
+                    </rect>
+                   </property>
+                   <property name="text">
+                    <string>Color 6</string>
+                   </property>
+                   <attribute name="buttonGroup">
+                    <string notr="true">buttonGroup</string>
+                   </attribute>
+                  </widget>
+                  <widget class="QRadioButton" name="radioButton7">
+                   <property name="geometry">
+                    <rect>
+                     <x>10</x>
+                     <y>150</y>
+                     <width>97</width>
+                     <height>17</height>
+                    </rect>
+                   </property>
+                   <property name="text">
+                    <string>Color 7</string>
+                   </property>
+                   <attribute name="buttonGroup">
+                    <string notr="true">buttonGroup</string>
+                   </attribute>
+                  </widget>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_11">
+             <item>
+              <widget class="LUTView" name="lutView" native="true">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>500</width>
+                 <height>300</height>
+                </size>
+               </property>
+               <property name="baseSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_6">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="tab_2">
+        <attribute name="title">
+         <string>Camera Settings</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayout_5">
+         <item row="1" column="1">
+          <widget class="QGroupBox" name="groupBoxImageSettings">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="title">
+            <string>Image Settings</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_2">
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_3">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="autoFillBackground">
+               <bool>false</bool>
+              </property>
+              <property name="text">
+               <string>Exposure</string>
+              </property>
+              <property name="scaledContents">
+               <bool>false</bool>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+              </property>
+              <property name="wordWrap">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="6">
+             <layout class="QVBoxLayout" name="verticalLayout_3">
+              <item>
+               <widget class="QCheckBox" name="flipHoriz">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Horizontal Flip</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="flipVert">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Vertical Flip</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="autoExposure">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Auto Exposure</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="3">
+             <widget class="QSlider" name="gain">
+              <property name="maximum">
+               <number>255</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="3">
+             <widget class="QLabel" name="label_13">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Gain</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QSlider" name="exposure">
+              <property name="maximum">
+               <number>500000</number>
+              </property>
+              <property name="pageStep">
+               <number>100</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QGroupBox" name="groupBoxColorBalance">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="title">
+            <string>Color Balance</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_4">
+            <item row="0" column="1">
+             <widget class="QSlider" name="greenGain">
+              <property name="maximum">
+               <number>63</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="3">
+             <widget class="QSlider" name="blueGain">
+              <property name="maximum">
+               <number>63</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLabel" name="label_6">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Green Gain</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="3">
+             <widget class="QLabel" name="label_7">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Blue Gain</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QSlider" name="redGain">
+              <property name="maximum">
+               <number>63</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_5">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Red Gain</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="5">
+             <layout class="QVBoxLayout" name="verticalLayout_10">
+              <item>
+               <widget class="QCheckBox" name="autoWhiteBal">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Auto White Bal.</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_4">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QGroupBox" name="groupBoxPostProcessing">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="title">
+            <string>Image Post Processing</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_6">
+            <item row="1" column="5">
+             <widget class="QSlider" name="saturation">
+              <property name="maximum">
+               <number>255</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="5">
+             <widget class="QLabel" name="label_12">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Saturation</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QSlider" name="contrast">
+              <property name="maximum">
+               <number>255</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLabel" name="label_8">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Contrast</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <widget class="QSlider" name="brightness">
+              <property name="maximum">
+               <number>255</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="2">
+             <widget class="QLabel" name="label_4">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Brightness</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="6">
+             <widget class="QSlider" name="hue">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="6">
+             <widget class="QLabel" name="label_9">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Hue</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="0" column="1" colspan="2">
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QPushButton" name="autoUpdateSettings">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string>Auto Update Settings</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+         <item row="2" column="2">
+          <widget class="QGroupBox" name="groupBoxDirectRegAccess">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="title">
+            <string>Direct Register Access</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_7">
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_10">
+              <property name="text">
+               <string>Address (hex)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLabel" name="label_11">
+              <property name="text">
+               <string>Data (hex)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0" colspan="2">
+             <spacer name="verticalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="4" column="0">
+             <widget class="QPushButton" name="readCamReg">
+              <property name="text">
+               <string>Read Register</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QPushButton" name="writeCamReg">
+              <property name="text">
+               <string>Write Register</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QPushButton" name="resetDefault">
+              <property name="text">
+               <string>Reset Factory Settings</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QSpinBox" name="regAddr">
+              <property name="maximum">
+               <number>255</number>
+              </property>
+              <property name="displayIntegerBase">
+               <number>16</number>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QSpinBox" name="regData">
+              <property name="maximum">
+               <number>255</number>
+              </property>
+              <property name="displayIntegerBase">
+               <number>16</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="3" column="2">
+          <spacer name="verticalSpacer_10">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="status">
+     <property name="text">
+      <string>Status:</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>CamImageView</class>
+   <extends>QLabel</extends>
+   <header>src/CamImageView.h</header>
+   <slots>
+    <signal>mouseMoved(QMouseEvent*)</signal>
+    <signal>mouseReleased(QMouseEvent*)</signal>
+    <signal>mousePressed(QMouseEvent*)</signal>
+   </slots>
+  </customwidget>
+  <customwidget>
+   <class>LUTView</class>
+   <extends>QWidget</extends>
+   <header>src/LUTView.h</header>
+   <container>1</container>
+   <slots>
+    <signal>lutChanged()</signal>
+   </slots>
+  </customwidget>
+  <customwidget>
+   <class>PortComboBox</class>
+   <extends>QComboBox</extends>
+   <header>src/portcombobox.h</header>
+   <slots>
+    <signal>gotFocus()</signal>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>comboBox_conntype</tabstop>
+  <tabstop>comboBox_port</tabstop>
+  <tabstop>pushButton_connect</tabstop>
+  <tabstop>pushButton_checkcamera</tabstop>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>WriteLUT</tabstop>
+  <tabstop>readLUT</tabstop>
+  <tabstop>checkBox_interpolate</tabstop>
+  <tabstop>pushButton_exchange</tabstop>
+  <tabstop>colorCombo</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton_connect</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>connectClicked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>89</x>
+     <y>108</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>96</x>
+     <y>110</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_port</sender>
+   <signal>gotFocus()</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>portsFocused()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>82</x>
+     <y>91</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>98</x>
+     <y>82</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lutView</sender>
+   <signal>lutChanged()</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>updateLutImage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>425</x>
+     <y>451</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>444</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_checkcamera</sender>
+   <signal>clicked()</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>checkCameraLink()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>52</x>
+     <y>131</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>63</x>
+     <y>135</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_sample</sender>
+   <signal>clicked()</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>sampleImageClick()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>211</x>
+     <y>44</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>148</x>
+     <y>7</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_interpolate</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>toggleInterpolate(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>34</x>
+     <y>632</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>103</x>
+     <y>586</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_exchange</sender>
+   <signal>clicked()</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>exchangeColor()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>34</x>
+     <y>661</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>105</x>
+     <y>614</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_erase</sender>
+   <signal>clicked()</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>eraseColor()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>210</x>
+     <y>394</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>162</x>
+     <y>343</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>eraseLut</sender>
+   <signal>clicked()</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>lutErase()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>34</x>
+     <y>394</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>54</x>
+     <y>342</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>autoUpdateSettings</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>toggleAutoUpdate(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>95</x>
+     <y>294</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>114</x>
+     <y>276</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>gain</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>camSettingChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>185</x>
+     <y>376</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>154</x>
+     <y>354</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>flipHoriz</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>camSettingChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>389</x>
+     <y>364</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>308</x>
+     <y>308</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>flipVert</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>camSettingChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>375</x>
+     <y>387</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>311</x>
+     <y>332</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>autoExposure</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>camSettingChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>393</x>
+     <y>410</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>314</x>
+     <y>358</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>redGain</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>camSettingChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>441</x>
+     <y>376</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>398</x>
+     <y>379</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>greenGain</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>camSettingChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>529</x>
+     <y>376</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>472</x>
+     <y>345</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>blueGain</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>camSettingChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>616</x>
+     <y>376</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>545</x>
+     <y>356</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>autoWhiteBal</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>camSettingChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>782</x>
+     <y>364</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>650</x>
+     <y>308</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>contrast</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>camSettingChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>51</x>
+     <y>540</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>41</x>
+     <y>533</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>brightness</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>camSettingChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>144</x>
+     <y>540</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>123</x>
+     <y>530</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>saturation</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>camSettingChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>236</x>
+     <y>540</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>212</x>
+     <y>537</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>hue</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>camSettingChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>329</x>
+     <y>540</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>288</x>
+     <y>532</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>WriteLUT</sender>
+   <signal>clicked()</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>writeLutClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>24</x>
+     <y>307</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>58</x>
+     <y>252</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>readLUT</sender>
+   <signal>clicked()</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>readLutClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>215</x>
+     <y>307</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>170</x>
+     <y>262</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonRegion</sender>
+   <signal>clicked()</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>regionResults()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>625</x>
+     <y>56</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>556</x>
+     <y>38</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>resetDefault</sender>
+   <signal>clicked()</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>resetFactory()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>705</x>
+     <y>533</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>600</x>
+     <y>506</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_conntype</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>selectConnType(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>24</x>
+     <y>34</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>48</x>
+     <y>38</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>readCamReg</sender>
+   <signal>clicked()</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>readReg()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>520</x>
+     <y>607</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>442</x>
+     <y>620</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>writeCamReg</sender>
+   <signal>clicked()</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>writeReg()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>705</x>
+     <y>607</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>624</x>
+     <y>619</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonGriding</sender>
+   <signal>clicked()</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>gridingResults()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>677</x>
+     <y>45</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>683</x>
+     <y>43</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_load</sender>
+   <signal>clicked()</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>loadLutClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>282</x>
+     <y>349</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>74</x>
+     <y>317</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_save</sender>
+   <signal>clicked()</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>saveLutClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>39</x>
+     <y>349</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>172</x>
+     <y>326</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>originalImage</sender>
+   <signal>mouseMoved(QMouseEvent*)</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>camImageMouseMoved(QMouseEvent*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>177</x>
+     <y>175</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>156</x>
+     <y>175</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>originalImage</sender>
+   <signal>mouseReleased(QMouseEvent*)</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>camImageMouseReleased(QMouseEvent*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>207</x>
+     <y>200</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>137</x>
+     <y>203</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>exposure</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>camSettingChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>51</x>
+     <y>376</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>128</x>
+     <y>389</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonGVG</sender>
+   <signal>clicked()</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>GVGResults()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>772</x>
+     <y>47</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>782</x>
+     <y>48</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonGroup</sender>
+   <signal>buttonClicked(int)</signal>
+   <receiver>HaViMoGUIClass</receiver>
+   <slot>colorRadioClicked(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>408</x>
+     <y>371</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <signal>clicked(int)</signal>
+  <slot>connectClicked(bool)</slot>
+  <slot>colorRadioClicked(int)</slot>
+  <slot>portsFocused()</slot>
+  <slot>checkCameraLink()</slot>
+  <slot>sampleImageClick()</slot>
+  <slot>updateLutImage()</slot>
+  <slot>toggleInterpolate(bool)</slot>
+  <slot>lutErase()</slot>
+  <slot>eraseColor()</slot>
+  <slot>exchangeColor()</slot>
+  <slot>toggleAutoUpdate(bool)</slot>
+  <slot>applySettingsClicked()</slot>
+  <slot>camSettingChanged()</slot>
+  <slot>writeLutClicked()</slot>
+  <slot>readLutClicked()</slot>
+  <slot>regionResults()</slot>
+  <slot>resetFactory()</slot>
+  <slot>selectConnType(int)</slot>
+  <slot>readReg()</slot>
+  <slot>writeReg()</slot>
+  <slot>gridingResults()</slot>
+  <slot>saveLutClicked()</slot>
+  <slot>loadLutClicked()</slot>
+  <slot>camImageMouseMoved(QMouseEvent*)</slot>
+  <slot>camImageMouseReleased(QMouseEvent*)</slot>
+  <slot>GVGResults()</slot>
+ </slots>
+ <buttongroups>
+  <buttongroup name="buttonGroup"/>
+ </buttongroups>
+</ui>
